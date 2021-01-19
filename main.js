@@ -1,5 +1,6 @@
-import Request from './classes/request.js';
+import Request from './classes/Request.js';
 import UI from './classes/UI.js';
+import Result from './classes/Result.js';
 
 const form = document.querySelector('#form-filter');
 form.addEventListener('submit', (event) => {
@@ -20,7 +21,7 @@ Request.getCategories()
 const options = document.querySelector('#qa-container');
 options.addEventListener('submit', (event) => {
     event.preventDefault();
-    let [counter, length] = Request.getAnswers();
+    let [counter, length] = Result.getAnswers();
     UI.printScore(counter, length);
 });
 
