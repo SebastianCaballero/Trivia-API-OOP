@@ -22,6 +22,9 @@ export default class UI {
                 console.log(cAnswer);
                 let randomAnswers = allAnswers.sort(() => Math.random() - 0.5);
                 console.log(randomAnswers);
+
+                const options = document.querySelector('#qa-container');
+                options.classList.remove("d-none");
     
                 content.innerHTML += `<div class="col-md-6 mb-4">
                                     <div class="card h-100">
@@ -59,8 +62,8 @@ export default class UI {
     static printScore(counter, length) {
         let content = document.getElementById('score-container');
 
-        content.innerHTML = `<div class="card border-success mb-3 mt-4 mx-auto" style="max-width: 18rem;">
-            <div class="card-body text-success text-center">
+        content.innerHTML = `<div class="card border-success bg-success mx-auto" style="max-width: 30rem;">
+            <div class="card-body text-light text-center">
             <h5 class="card-title">Your Score: ${counter}/${length}</h5>
             <p class="card-text">Correct answers: ${counter} <br> Wrong answers: ${length - counter} <br> Total answers: ${length}</p>
             </div>

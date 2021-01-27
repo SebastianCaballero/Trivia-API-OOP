@@ -21,6 +21,7 @@ Request.getCategories()
 const options = document.querySelector('#qa-container');
 options.addEventListener('submit', (event) => {
     event.preventDefault();
+    options.classList.add("d-none");
     let [counter, length] = Result.getAnswers();
     UI.printScore(counter, length);
 });
